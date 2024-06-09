@@ -1,0 +1,257 @@
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+    font-style: normal;
+}
+
+@mixin flex($dir, $jc, $ai) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jc;
+    align-items: $ai;
+}
+:root {
+    --LightRed: hsl(0, 100%, 67%);
+    --BackgroundLightRed: hsl(0, 100%, 67%, 0.075);
+    --OrangeyYellow: hsl(39, 100%, 56%);
+    --BackgroundOrangeyYellow: hsl(39, 100%, 56%, 0.075);
+    --GreenTeal: hsl(166, 100%, 37%);
+    --BackgroundGreenTeal: hsl(166, 100%, 37%, 0.075);
+    --CobaltBlue: hsl(234, 85%, 45%);
+    --BackgroundCobaltBlue: hsl(234, 85%, 45%, 0.075);
+    --LightSlateBlue: hsl(252, 100%, 67%);
+    --LightRoyalBlue: hsl(241, 81%, 54%);
+    --VioletBlue: hsla(256, 72%, 46%, 1);
+    --PersianBlue: hsla(241, 72%, 46%, 0);
+    --White: hsl(0, 0%, 100%);
+    --PaleBlue: hsl(221, 100%, 96%);
+    --LightLavender: hsl(241, 100%, 89%);
+    --DarkGrayBlue: hsl(224, 30%, 27%);
+
+    --fs_n: 1.2em;
+    --fs_b: 1.8em;
+    --fs_l: 2.2em;
+    --fs_xl: 6em;
+}
+
+*,
+* *,
+*::after,
+*::before,
+* *::after,
+* *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+:root {
+    font-family: "Hanken Grotesk";
+    font-size: 14px;
+
+    font-weight: 500;
+}
+body {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    scroll-behavior: smooth;
+    background: var(--PaleBlue);
+    @include flex(column, flex-start, center);
+    img {
+        width: 100%;
+    }
+    a {
+        background: none;
+        text-decoration: none;
+        color: inherit;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    BUTTON {
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    ARTICLE,
+    IMG,
+    SPAN {
+        display: block;
+    }
+    SVG {
+        width: 100%;
+        height: auto;
+    }
+
+    H1 {
+        padding: 0;
+        margin: 0;
+    }
+    H3 {
+        font-size: var(--fs_b);
+        font-weight: 500;
+    }
+
+    H2 {
+        font-size: var(--fs_l);
+    }
+    p {
+        font-size: var(--fs_n);
+    }
+    H1,
+    H2,
+    H3,
+    P {
+        width: 100%;
+    }
+}
+
+.card {
+    height: fit-content;
+    border-radius: 2rem;
+    background: var(--White);
+    @include flex(column, flex-start, center);
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    .section_card {
+        padding: 4rem;
+        @include flex(column, space-between, center);
+        gap: 2rem;
+        width: 100%;
+    }
+    .hero_card {
+        background: linear-gradient(var(--LightSlateBlue), var(--LightRoyalBlue));
+        border-radius: 0 0 2rem 2rem;
+        text-align: center;
+        & * {
+            color: var(--LightLavender);
+        }
+        H2 {
+            color: var(--White);
+        }
+
+        .card_porcentage {
+            color: white;
+            font-size: var(--fs_xl);
+        }
+        .placeholder {
+            @include flex(column, center, center);
+            border-radius: 50%;
+            width: 15rem;
+            height: 15rem;
+            background: linear-gradient(var(--VioletBlue), var(--PersianBlue));
+            SPAN {
+                font-size: var(--fs_n);
+            }
+        }
+    }
+    .info_card {
+        color: var(--DarkGrayBlue);
+        BUTTON {
+            background: var(--DarkGrayBlue);
+            border-radius: 2rem;
+            width: 100%;
+            color: var(--White);
+            padding: 1.2rem 0;
+            font-size: var(--fs_n);
+        }
+        H3 {
+            text-align: left;
+            font-weight: 800;
+        }
+        IMG {
+            width: 2rem;
+            height: 2rem;
+        }
+        UL {
+            width: 100%;
+        }
+        LI {
+            @include flex(row, space-between, center);
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: var(--fs_n);
+            width: 100%;
+            opacity: 0.75;
+            font-weight: 700;
+
+            SPAN {
+                @include flex(row, center, center);
+            }
+
+            .icon_container {
+                width: auto;
+                height: 100%;
+            }
+        }
+        LI:not(:first-child) {
+            margin-top: 1rem;
+        }
+        .category,
+        .score {
+            gap: 0.5rem;
+        }
+        .score {
+            color: var(--LightLavender);
+        }
+        .item_score {
+            color: var(--DarkGrayBlue);
+        }
+        [data-name="Reaction"] {
+            background: var(--BackgroundLightRed);
+            .item_text {
+                color: var(--LightRed);
+            }
+        }
+        [data-name="Memory"] {
+            background: var(--BackgroundOrangeyYellow);
+            .item_text {
+                color: var(--OrangeyYellow);
+            }
+        }
+        [data-name="Verbal"] {
+            background: var(--BackgroundGreenTeal);
+            .item_text {
+                color: var(--GreenTeal);
+            }
+        }
+
+        [data-name="Visual"] {
+            background: var(--BackgroundCobaltBlue);
+            .item_text {
+                color: var(--CobaltBlue);
+            }
+        }
+    }
+}
+.attribution {
+    padding: 2rem 0;
+    A {
+        color: var(--CobaltBlue);
+    }
+}
+@media screen and (min-width: 645px) {
+    BODY {
+        justify-content: center;
+    }
+    .card {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        max-width: 750px;
+        .section_card {
+            width: 50%;
+            height: fill-content;
+        }
+        .hero_card {
+            border-radius: 2rem;
+            height: 100%;
+        }
+    }
+}

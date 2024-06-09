@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+        <title>Frontend Mentor | Results summary component</title>
+
+        <script type="module" charset="utf-8" src="./index.js"></script>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <article class="card">
+            <div class="section_card hero_card">
+                <h3>Your Result</h3>
+                <span class="placeholder">
+                    <h1 class="card_porcentage"></h1>
+                    <span>of 100</span>
+                </span>
+                <span>
+                    <h2>Great</h2>
+                    <p>You scored higher than 65% of the people who have taken these tests.</p>
+                </span>
+            </div>
+            <div class="section_card info_card">
+                <h3>Summary</h3>
+                <ul></ul>
+                <button type="button">Continue</button>
+            </div>
+        </article>
+        <div class="attribution">
+            <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/JohnMcKrazy" target="_blank">Jonathan Grajeda</a>.</p>
+        </div>
+    </body>
+</html>
+<template class="item_template">
+    <li>
+        <span class="category"><img src="" /> <span class="item_text"></span></span>
+        <span class="score"><span class="item_score"></span>/100</span>
+    </li>
+</template>
